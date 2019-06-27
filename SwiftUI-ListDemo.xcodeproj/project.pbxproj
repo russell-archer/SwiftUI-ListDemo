@@ -7,15 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		684C7BA022C278FD00FE539B /* AnimalRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 684C7B9F22C278FD00FE539B /* AnimalRepository.swift */; };
+		687CF88922BEEE5E00431E1C /* AnimalDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 687CF88822BEEE5E00431E1C /* AnimalDetail.swift */; };
 		687E138C22BC4BE10030D11D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 687E138B22BC4BE10030D11D /* AppDelegate.swift */; };
 		687E138E22BC4BE10030D11D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 687E138D22BC4BE10030D11D /* SceneDelegate.swift */; };
 		687E139022BC4BE10030D11D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 687E138F22BC4BE10030D11D /* ContentView.swift */; };
 		687E139222BC4BE40030D11D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 687E139122BC4BE40030D11D /* Assets.xcassets */; };
 		687E139522BC4BE40030D11D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 687E139422BC4BE40030D11D /* Preview Assets.xcassets */; };
 		687E139822BC4BE40030D11D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 687E139622BC4BE40030D11D /* LaunchScreen.storyboard */; };
+		687E13A022BC4CDF0030D11D /* Animal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 687E139F22BC4CDF0030D11D /* Animal.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		684C7B9F22C278FD00FE539B /* AnimalRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalRepository.swift; sourceTree = "<group>"; };
+		687CF88822BEEE5E00431E1C /* AnimalDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalDetail.swift; sourceTree = "<group>"; };
 		687E138822BC4BE10030D11D /* SwiftUI-ListDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SwiftUI-ListDemo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		687E138B22BC4BE10030D11D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		687E138D22BC4BE10030D11D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -24,6 +29,7 @@
 		687E139422BC4BE40030D11D /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		687E139722BC4BE40030D11D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		687E139922BC4BE40030D11D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		687E139F22BC4CDF0030D11D /* Animal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animal.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,12 +62,15 @@
 		687E138A22BC4BE10030D11D /* SwiftUI-ListDemo */ = {
 			isa = PBXGroup;
 			children = (
+				687E139922BC4BE40030D11D /* Info.plist */,
+				687E139F22BC4CDF0030D11D /* Animal.swift */,
+				687CF88822BEEE5E00431E1C /* AnimalDetail.swift */,
+				684C7B9F22C278FD00FE539B /* AnimalRepository.swift */,
 				687E138B22BC4BE10030D11D /* AppDelegate.swift */,
-				687E138D22BC4BE10030D11D /* SceneDelegate.swift */,
 				687E138F22BC4BE10030D11D /* ContentView.swift */,
+				687E138D22BC4BE10030D11D /* SceneDelegate.swift */,
 				687E139122BC4BE40030D11D /* Assets.xcassets */,
 				687E139622BC4BE40030D11D /* LaunchScreen.storyboard */,
-				687E139922BC4BE40030D11D /* Info.plist */,
 				687E139322BC4BE40030D11D /* Preview Content */,
 			);
 			path = "SwiftUI-ListDemo";
@@ -147,8 +156,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				687E138C22BC4BE10030D11D /* AppDelegate.swift in Sources */,
+				687E13A022BC4CDF0030D11D /* Animal.swift in Sources */,
+				687CF88922BEEE5E00431E1C /* AnimalDetail.swift in Sources */,
 				687E138E22BC4BE10030D11D /* SceneDelegate.swift in Sources */,
 				687E139022BC4BE10030D11D /* ContentView.swift in Sources */,
+				684C7BA022C278FD00FE539B /* AnimalRepository.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
