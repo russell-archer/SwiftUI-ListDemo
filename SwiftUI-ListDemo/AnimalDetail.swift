@@ -5,6 +5,8 @@
 //  Created by Russell Archer on 23/06/2019.
 //  Copyright © 2019 Russell Archer. All rights reserved.
 //
+// Updated for Xcode 11 Beta 5
+//
 
 import SwiftUI
 
@@ -19,13 +21,13 @@ struct AnimalDetail : View {
                 .aspectRatio(contentMode: isZoomed ? .fill : .fit)
                 .cornerRadius(10)
                 .padding(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
-                .tapAction {
+                .onTapGesture {
                     withAnimation { self.isZoomed.toggle() }
                 }
 
             Text(animal.name)
             Text(animal.description)
-                .color(.gray)
+                .foregroundColor(.gray)
         }
         .navigationBarTitle(Text("\(animal.name) Details"), displayMode: .inline)
     }

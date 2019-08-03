@@ -5,30 +5,48 @@
 //  Created by Russell Archer on 21/06/2019.
 //  Copyright © 2019 Russell Archer. All rights reserved.
 //
+// Updated for Xcode 11 Beta 5
+//
 
 import SwiftUI
 
 struct ContentView: View {
-    // Declare animalStore to be a dynamic property that auto-subscribes
-    // to our data model. Ensures that when our data model changes the
-    // View is invalidated and re-rendered
-    @ObjectBinding var animalStore: AnimalRepository
+    // animalStore is a dynamic property that auto-subscribes to our data model.
+    // When our data model changes the View is invalidated and re-rendered
+    @ObservedObject var animalStore: AnimalRepository
     
     var body: some View {
         NavigationView {
-            List(animalStore.animals) { animal in
-                AnimalCell(animal: animal)
+            List {
+                Section {
+                    // Add a button to the list itself
+                    Button(action: addAnimal) {
+                        Text("Add Animal")
+                    }
+                }
+
+                Section {
+                    // Use the SwiftUI ForEach (i.e. NOT the Swift forEach)
+                    // to add data to the list
+                    ForEach(animalStore.animals) { animal in
+                        AnimalCell(animal: animal)
+                    }
+                    .onDelete(perform: deleteAnimals)  // Swipe left to delete
+                }
             }
-                
+
             .navigationBarTitle(Text("Animals"))
-                
-            // Add a "+" button to the nav bar to allow us
-            // to test adding data to our model
-            .navigationBarItems(
-                trailing: Button(action: {
-                    self.animalStore.animals.append(
-                        Animal(name: "Owl", description: "Test!"))
-                }, label: { Image(systemName: "plus") }))
+            .navigationBarItems(trailing: EditButton())
+        }
+    }
+    
+    func addAnimal() {
+        animalStore.animals.append(Animal(name: "Owl", description: "Test!"))
+    }
+    
+    func deleteAnimals(at offsets: IndexSet) {
+        offsets.forEach { index in
+            animalStore.animals.remove(at: index)
         }
     }
 }
@@ -37,7 +55,7 @@ struct AnimalCell: View {
     let animal: Animal
     
     var body: some View {
-        return NavigationButton(destination: AnimalDetail(animal: animal)) {
+        NavigationLink(destination: AnimalDetail(animal: animal)) {
             Image(animal.thumbName)
                 .cornerRadius(10)
             VStack(alignment: .leading) {
@@ -51,7 +69,13 @@ struct AnimalCell: View {
 #if DEBUG
 struct ContentView_Previews : PreviewProvider {
     static var previews: some View {
-        ContentView(animalStore: AnimalRepository())
+        Group {
+            ContentView(animalStore: AnimalRepository())
+            
+            // Show a second preview with dark mode enabled
+            ContentView(animalStore: AnimalRepository())
+                .environment(\.colorScheme, .dark)
+        }
     }
 }
 #endif

@@ -5,21 +5,15 @@
 //  Created by Russell Archer on 25/06/2019.
 //  Copyright © 2019 Russell Archer. All rights reserved.
 //
+// Updated for Xcode 11 Beta 5
+//
 
 import Foundation
 import SwiftUI
 import Combine
 
-class AnimalRepository: BindableObject {
-    // This allows us to publish a “change" message to subscribers
-    var didChange = PassthroughSubject<Void, Never>()
-    
-    var animals: [Animal] = [] {
-        didSet {
-            // Called when the array is modified
-            didChange.send()  // Let subscribers know we've changed
-        }
-    }
+class AnimalRepository: ObservableObject {
+    @Published var animals = [Animal]()
     
     init() {
         // Create initial test data
