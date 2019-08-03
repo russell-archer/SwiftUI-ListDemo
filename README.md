@@ -460,8 +460,47 @@ Note that our data model conforms to the **ObservableObject** protocol and that 
 The **@Published** prefix is a **property wrapper** and adds a **Publisher** to any property:
 
 ``` swift
+//
+//  AnimalRepository.swift
+//  SwiftUI-ListDemo
+//
+//  Created by Russell Archer on 25/06/2019.
+//  Copyright © 2019 Russell Archer. All rights reserved.
+//
+// Updated for Xcode 11 Beta 5
+//
+
+import Foundation
+import SwiftUI
+import Combine
+
+class AnimalRepository: ObservableObject {
+    @Published var animals = [Animal]()
+    
+    init() {
+        // Create initial test data
+        animals.append(Animal(name: "Eagle", description: "Flys"))
+        animals.append(Animal(name: "Owl", description: "Hoots"))
+        animals.append(Animal(name: "Parrot", description: "Talks"))
+        animals.append(Animal(name: "Penguin", description: "Waddles"))
+        animals.append(Animal(name: "Zebra", description: "Runs"))
+    }
+}
+```
+
+Now modify **ContentView** as follows to use the new data model. 
+We also add a “+” button to the navigation bar to allow us to test the mechanism for adding items to our data model.
+
+Notice how we create an **animalStore** property of type **AnimalRepository** that is declared to be a **@ObservedObject**. 
+This declares **animalStore** to be a dynamic property that auto-subscribes to an object (our data model) that conforms to the **ObservableObject** protocol. 
+This ensures that when our data model changes the View is invalidated and re-rendered.
+
+**@ObservedObject** is similar to **@State** that we used earlier, except that **@ObservedObject** is intended for use with complex reference 
+types, such as our data model, rather than simple types like Int, String, etc.
+
+``` swift
 struct ContentView: View {
-    // animalStore is a property that auto-subscribes to our data model.
+    // animalStore is a dynamic property that auto-subscribes to our data model.
     // When our data model changes the View is invalidated and re-rendered
     @ObservedObject var animalStore: AnimalRepository
     
