@@ -5,7 +5,7 @@
 //  Created by Russell Archer on 21/06/2019.
 //  Copyright © 2019 Russell Archer. All rights reserved.
 //
-// Updated for Xcode 11 Beta 5
+// Tested and working with Xcode 11 Beta 6 on Mojave 10.14.6
 //
 
 import SwiftUI

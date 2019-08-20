@@ -5,14 +5,14 @@
 //  Created by Russell Archer on 23/06/2019.
 //  Copyright © 2019 Russell Archer. All rights reserved.
 //
-// Updated for Xcode 11 Beta 5
+// Updated for Xcode 11 Beta 6
 //
 
 import SwiftUI
 
 struct AnimalDetail : View {
     let animal: Animal
-    @State private var isZoomed = false
+    @State private var isZoomed = true
     
     var body: some View {
         VStack {
