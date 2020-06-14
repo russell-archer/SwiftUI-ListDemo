@@ -5,7 +5,7 @@
 //  Created by Russell Archer on 25/06/2019.
 //  Copyright © 2019 Russell Archer. All rights reserved.
 //
-// Updated for Xcode 11 Beta 6
+// Updated for Xcode 11 Beta 7
 //
 
 import Foundation

@@ -1,6 +1,6 @@
 # SwiftUI-ListDemo
 ## Creating an editable list with SwiftUI with support for navigation
-**(Updated for Xcode 11 Beta 6)**
+**(Updated for Xcode 11 Beta 7)**
 
 Based on the WWDC 2019 presentation "Introducing SwiftUI: Building Your First App” (https://developer.apple.com/videos/play/wwdc2019/204/).
 
